@@ -1,0 +1,8 @@
+.accordion-item .custom-accordion-button {
+    background-color: transparent; /* Remove the blue highlight */
+    color: #212529; /* Set the color for the active accordion button */
+  }
+  
+  .custom-accordion-button:focus {
+    box-shadow: none; /* Remove the focus box shadow */
+  }

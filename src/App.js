@@ -1,33 +1,49 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import RepoList from './RepoList';
+import './App.css'
 
 function App() {
   const [search, setSearch] = useState('');
+  const [searchInput, setSearchInput] = useState('');
+  const accessToken = "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"
+
+
+  const handleSearchChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    setSearch(searchInput);
+  };
 
   return (
-    <div>
-      <h1>Search for a GitHub organization</h1>
-      <div>
-        <div>
-          <form>
-            <div>
-              <label htmlFor="githubOrgSearch" hidden>
+    <div className="container">
+      <h1 className="mt-4">Search for a GitHub organization</h1>
+      <div className="row">
+        <div className="col-md-6">
+          <form onSubmit={handleSearchSubmit}>
+            <div className="mb-3">
+              <label htmlFor="githubOrgSearch" className="form-label">
                 Search for GitHub organization
               </label>
               <input
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  type="text"
-                  className="form-control"
-                  id="githubOrgSearch"
-                  aria-describedby="githubOrgSearch"
-                  placeholder="Search for a GitHub Organization"
-                />
+                value={searchInput}
+                onChange={handleSearchChange}
+                type="text"
+                className="form-control"
+                id="githubOrgSearch"
+                placeholder="Search for a GitHub Organization"
+              />
             </div>
             <button type="submit" className="btn btn-primary">
               Search
             </button>
           </form>
         </div>
+      </div>
+      <div className="mt-4">
+        <RepoList search={search} accessToken={accessToken} />
       </div>
     </div>
   );
