@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { formatDateTime } from './DateTimeFormat';
 
 const CommitList = ({ repoName }) => {
   const [commits, setCommits] = useState([]);
@@ -19,16 +20,6 @@ const CommitList = ({ repoName }) => {
     fetchCommits();
   }, [repoName]);
   
-  const formatDateTime = (dateTimeString) => {
-    const options = {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-    };
-    return new Date(dateTimeString).toLocaleString(undefined, options);
-  };
   return (
     <div className="mt-4">
       <h2>Commits for Repository: {repoName}</h2>

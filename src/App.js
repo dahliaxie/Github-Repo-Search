@@ -5,7 +5,7 @@ import './App.css'
 function App() {
   const [search, setSearch] = useState('');
   const [searchInput, setSearchInput] = useState('');
-  const accessToken = "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"
+  const accessToken = "YOUR_GITHUB_ACCESS_TOKEN";
 
 
   const handleSearchChange = (e) => {

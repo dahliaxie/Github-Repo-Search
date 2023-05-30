@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import CommitList from './CommitList';
 import './App.css';
+import { formatDateTime } from './DateTimeFormat';
+
 
 const RepoList = ({ search, accessToken }) => {
   const [repositories, setRepositories] = useState([]);
@@ -66,7 +68,7 @@ const RepoList = ({ search, accessToken }) => {
                 <p>Description: {repo.description}</p>
                 <p>Star Count: {repo.stargazers_count}</p>
                 <p>Fork Count: {repo.forks_count}</p>
-                <p>Date Created: {repo.created_at}</p>
+                <p>Date Created: {formatDateTime(repo.created_at)}</p>
                 <button
                   className="btn btn-primary"
                   type="button"
