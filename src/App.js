@@ -5,7 +5,7 @@ import './App.css'
 function App() {
   const [search, setSearch] = useState('');
   const [searchInput, setSearchInput] = useState('');
-  const accessToken = "YOUR_GITHUB_ACCESS_TOKEN";
+  const accessToken = "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";
 
 
   const handleSearchChange = (e) => {
@@ -42,7 +42,7 @@ function App() {
           </form>
         </div>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 mb-4">
         <RepoList search={search} accessToken={accessToken} />
       </div>
     </div>
