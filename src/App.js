@@ -5,7 +5,8 @@ import './App.css'
 function App() {
   const [search, setSearch] = useState('');
   const [searchInput, setSearchInput] = useState('');
-  const accessToken = "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";
+  //Generate Personal Access Token Here: https://github.com/settings/tokens
+  const accessToken = "";
 
 
   const handleSearchChange = (e) => {
